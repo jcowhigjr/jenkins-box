@@ -1,0 +1,19 @@
+# encoding: utf-8
+
+site 'http://community.opscode.com/api/v1'
+
+cookbook 'apt'
+cookbook 'git'
+cookbook 'imagemagick'
+
+cookbook 'mysql'
+cookbook 'rvm', github: 'fnichol/chef-rvm'
+
+cookbook 'locale', github: 'deepak/chef-locale'
+cookbook 'oh_my_zsh', github: 'shingara/oh-my-zsh-chef'
+
+cookbook 'jenkins', github: 'opscode-cookbooks/jenkins'
+cookbook 'phantomjs'
+
+# see https://github.com/opscode-cookbooks/runit/pull/23
+cookbook 'runit', github: 'noazark/runit', ref: '31a6cf67fa'

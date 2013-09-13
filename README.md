@@ -16,7 +16,7 @@ Ensure that the dependencies are setup and then just execute:
 
     ./bootstrap.sh
 
-When everything went fine start yout VM:
+When everything went fine start your VM:
 
     vagrant up
 
@@ -44,8 +44,16 @@ When you added / removed plugins you must restart Jenkins:
 
 - Vagrant 1.2+
 - Ruby + Bundler
-- Chef + Berkshelf
+- Chef + Librarian
 - Node + NPM
+
+## Gotchas
+
+Add jenkins user to rvm group:
+```
+sudo adduser jenkins rvm
+sudo /etc/init.d/jenkins restart
+```
 
 ## License
 

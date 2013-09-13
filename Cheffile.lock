@@ -1,0 +1,99 @@
+SITE
+  remote: http://community.opscode.com/api/v1
+  specs:
+    apache2 (1.7.0)
+    apt (2.1.1)
+    build-essential (1.4.2)
+    chef_gem (0.1.0)
+    chef_handler (1.1.4)
+    chocolatey (0.0.5)
+      powershell (>= 0.0.0)
+    dmg (2.0.0)
+    git (2.6.0)
+      build-essential (>= 0.0.0)
+      dmg (>= 0.0.0)
+      runit (>= 1.0.0)
+      windows (>= 0.0.0)
+      yum (>= 0.0.0)
+    imagemagick (0.2.2)
+    iptables (0.12.0)
+    java (1.13.0)
+      windows (>= 0.0.0)
+    mysql (3.0.4)
+      build-essential (> 1.1.0)
+      openssl (>= 0.0.0)
+    nginx (1.8.0)
+      apt (>= 0.0.0)
+      build-essential (>= 0.0.0)
+      ohai (>= 1.1.4)
+      runit (>= 0.0.0)
+      yum (>= 0.0.0)
+    ohai (1.1.12)
+    openssl (1.1.0)
+    phantomjs (1.0.2)
+      build-essential (>= 0.0.0)
+      chocolatey (>= 0.0.0)
+    powershell (1.1.2)
+      windows (>= 1.2.8)
+    windows (1.10.0)
+      chef_handler (>= 0.0.0)
+    yum (2.3.2)
+
+GIT
+  remote: https://github.com/deepak/chef-locale
+  ref: master
+  sha: b79da8f2e3cfd7bec7200fdfb1fcc5eda26d2dd8
+  specs:
+    locale (0.0.2)
+
+GIT
+  remote: https://github.com/fnichol/chef-rvm
+  ref: master
+  sha: 59dc482e2c39db4c378e79e10569f1becdc4bc43
+  specs:
+    rvm (0.9.1)
+      chef_gem (>= 0.0.0)
+
+GIT
+  remote: https://github.com/noazark/runit
+  ref: 31a6cf67fa
+  sha: 31a6cf67fa376e89638381ae012bc7c5bc87b1bb
+  specs:
+    runit (1.1.0)
+      build-essential (>= 0.0.0)
+      yum (>= 0.0.0)
+
+GIT
+  remote: https://github.com/opscode-cookbooks/jenkins
+  ref: master
+  sha: 69b8a7130ebc94209cc87a70773b7260dd3c24d1
+  specs:
+    jenkins (1.0.0)
+      apache2 (>= 0.0.0)
+      apt (>= 0.0.0)
+      iptables (>= 0.0.0)
+      java (>= 0.0.0)
+      nginx (>= 0.0.0)
+      runit (>= 1.0.0)
+      yum (>= 0.0.0)
+
+GIT
+  remote: https://github.com/shingara/oh-my-zsh-chef
+  ref: master
+  sha: 46f89c50ce85a098a04b20e7f672be2700083ee9
+  specs:
+    oh_my_zsh (0.0.1)
+      git (>= 0.0.0)
+
+DEPENDENCIES
+  apt (>= 0)
+  git (>= 0)
+  imagemagick (>= 0)
+  jenkins (>= 0)
+  locale (>= 0)
+  mysql (>= 0)
+  oh_my_zsh (>= 0)
+  phantomjs (>= 0)
+  runit (>= 0)
+  rvm (>= 0)
+

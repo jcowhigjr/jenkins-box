@@ -24,71 +24,71 @@
     "version": "1.1"
   },
   {
-    "id": "github-api",
-    "version": "1.44"
-  },
-  {
     "id": "credentials",
-    "version": "1.7.6"
-  },
-  {
-    "id": "ssh-credentials",
     "version": "1.4"
   },
   {
-    "id": "git-client",
-    "version": "1.1.2"
-  },
-  {
-    "id": "token-macro",
-    "version": "1.8.1"
-  },
-  {
-    "id": "git",
-    "version": "1.5.0"
-  },
-  {
-    "id": "github",
-    "version": "1.8"
-  },
-  {
-    "id": "translation",
-    "version": "1.10"
-  },
-  {
-    "id": "ssh-slaves",
-    "version": "1.2"
+    "id": "ssh-credentials",
+    "version": "0.3"
   },
   {
     "id": "maven-plugin",
     "version": "1.530"
   },
   {
+    "id": "ssh-slaves",
+    "version": "0.25"
+  },
+  {
     "id": "subversion",
     "version": "1.45"
   },
   {
-    "id": "rake",
-    "version": "1.7.8"
-  },
-  {
-    "id": "ansicolor",
-    "version": "0.3.1"
+    "id": "translation",
+    "version": "1.10"
   },
   {
     "id": "cvs",
     "version": "2.8"
   },
   {
-    "id": "ruby-runtime",
-    "version": "0.12"
+    "id": "ansicolor",
+    "version": "0.3.1"
   },
   {
-    "id": "rvm",
-    "version": "0.4"
+    "id": "git-client",
+    "version": "1.1.2"
+  },
+  {
+    "id": "git",
+    "version": "1.5.0"
+  },
+  {
+    "id": "github-api",
+    "version": "1.44"
+  },
+  {
+    "id": "github",
+    "version": "1.8"
   },
   {
     "id": "greenballs",
     "version": "1.12"
+  },
+  {
+    "id": "rake",
+    "version": "1.7.8"
+  },
+  {
+    "id": "ruby-runtime",
+    "version": "0.12"
+  },
+  {
+    "id": "token-macro",
+    "version": "1.8.1"
+  },
+  {
+    "id": "rvm",
+    "version": "0.4"
   }
 ]

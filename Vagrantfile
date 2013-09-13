@@ -1,12 +1,12 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-Vagrant.configure("2") do |config|
+Vagrant.configure('2') do |config|
   # All Vagrant configuration is done here. The most common configuration
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
 
-  config.vm.hostname = "jenkins-box-berkshelf"
+  config.vm.hostname = "jenkins-box-librarian"
 
   # Every Vagrant virtual environment requires a box to build off of.
   #config.vm.box = "precise64"
@@ -24,6 +24,8 @@ Vagrant.configure("2") do |config|
   # any other machines on the same network, but cannot be accessed (through this
   # network interface) by any external networks.
   # config.vm.network :private_network, ip: "33.33.33.10"
+
+  config.vm.network :private_network, ip: '10.255.255.10'
   config.vm.network :forwarded_port, guest: 8080, host: 8080
 
   # Create a public network, which generally matched to bridged network.
@@ -65,7 +67,7 @@ Vagrant.configure("2") do |config|
 
   # Enabling the Berkshelf plugin. To enable this globally, add this configuration
   # option to your ~/.vagrant.d/Vagrantfile file
-  config.berkshelf.enabled = true
+  #config.berkshelf.enabled = true
 
   # An array of symbols representing groups of cookbook described in the Vagrantfile
   # to exclusively install and copy to Vagrant's shelf.
@@ -76,9 +78,28 @@ Vagrant.configure("2") do |config|
   # config.berkshelf.except = []
 
   config.vm.provision :chef_solo do |chef|
+
+    chef.cookbooks_path = ['cookbooks']
+    chef.add_recipe 'apt'
+    chef.add_recipe 'git'
+
+    chef.add_recipe 'rvm'
+    chef.add_recipe 'rvm::vagrant'
+    chef.add_recipe 'rvm::system'
+    chef.add_recipe 'rvm::gem_package'
+
+    chef.add_recipe 'mysql::server'
+    chef.add_recipe 'jenkins::server'
+    chef.add_recipe 'phantomjs::default'
+
+    chef.add_recipe 'oh_my_zsh'
+    chef.add_recipe 'locale'
+
+
     # configure recipes
     chef.json = {
       rvm: {
+          vagrant: { system_chef_solo: '/opt/chef/bin/chef-solo' },
           rubies:       ['2.0.0'],
           default_ruby: '2.0.0',
           global_gems:  [{ name: 'bundler' }, { name: 'rake' }]
@@ -103,16 +124,16 @@ Vagrant.configure("2") do |config|
       }
     }
 
-    # run recipes
-    chef.run_list = [
-      'recipe[apt]',
-      'recipe[jenkins::server]',
-      'recipe[mysql::server]',
-      'recipe[rvm]',
-      'recipe[rvm::vagrant]',
-      'recipe[rvm::system]',
-      'recipe[rvm::gem_package]',
-      'recipe[phantomjs::default]'
-    ]
+    ## run recipes
+    #chef.run_list = [
+    #  'recipe[apt]',
+    #  'recipe[jenkins::server]',
+    #  'recipe[mysql::server]',
+    #  'recipe[rvm]',
+    #  'recipe[rvm::vagrant]',
+    #  'recipe[rvm::system]',
+    #  'recipe[rvm::gem_package]',
+    #  'recipe[phantomjs::default]'
+    #]
   end
 end
